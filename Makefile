@@ -6,6 +6,7 @@ headers := XKeyboard.h XKeyboardGroups.h XKeyboardMod.h
 sources := XKeyboard.cpp XKeyboardGroups.cpp XKeyboardMod.cpp main.cpp
 objects := $(sources:.cpp=.o)
 target  := xkeyboard-check
+path 	:= /usr/local/bin
 
 all: clean $(target)
 
@@ -17,3 +18,9 @@ $(objects): %.o: %.cpp $(headers)
 
 clean:
 	rm -rf *.o *.gch $(target)
+
+install:
+	install $(target) $(path)
+
+uninstall:
+	rm -rf /usr/local/bin/$(target)
