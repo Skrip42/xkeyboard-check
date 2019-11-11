@@ -5,7 +5,7 @@ cdep = -lX11
 headers := XKeyboard.h XKeyboardGroups.h XKeyboardMod.h
 sources := XKeyboard.cpp XKeyboardGroups.cpp XKeyboardMod.cpp main.cpp
 objects := $(sources:.cpp=.o)
-target  := keyboard-state
+target  := xkeyboard-check
 
 all: clean $(target)
 
